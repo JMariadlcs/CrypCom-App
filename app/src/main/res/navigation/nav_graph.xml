@@ -24,5 +24,14 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_prueba2"
+            app:destination="@id/prueba2"
+            app:enterAnim="@anim/fragment_open_exit" />
     </fragment>
+    <fragment
+        android:id="@+id/prueba2"
+        android:name="com.crypcomapp.Prueba"
+        android:label="fragment_prueba"
+        tools:layout="@layout/fragment_prueba" />
 </navigation>
