@@ -30,7 +30,7 @@ public class FirstFragment extends Fragment {
                 NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_profile);
             }
         });
-        view.findViewById(R.id.ProfileButton).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.FavouritesButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_favourites);

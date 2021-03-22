@@ -2,7 +2,9 @@ package com.crypcomapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +62,26 @@ public class Favourites extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favourites, container, false);
+    }
+
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        view.findViewById(R.id.HomeButtton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Favourites.this).navigate(R.id.action_favourites_to_FirstFragment);
+            }
+        });
+
+        view.findViewById(R.id.ProfileButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Favourites.this).navigate(R.id.action_favourites_to_profile);
+            }
+        });
+
     }
 }

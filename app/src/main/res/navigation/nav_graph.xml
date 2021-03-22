@@ -29,10 +29,20 @@
         <action
             android:id="@+id/action_profile_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_profile_to_favourites"
+            app:destination="@id/favourites" />
     </fragment>
     <fragment
         android:id="@+id/favourites"
         android:name="com.crypcomapp.Favourites"
         android:label="fragment_favourites"
-        tools:layout="@layout/fragment_favourites" />
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_favourites_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_favourites_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
 </navigation>

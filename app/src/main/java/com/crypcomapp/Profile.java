@@ -74,5 +74,13 @@ public class Profile extends Fragment {
                 NavHostFragment.findNavController(Profile.this).navigate(R.id.action_profile_to_FirstFragment);
             }
         });
+
+        view.findViewById(R.id.FavouritesButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Profile.this).navigate(R.id.action_profile_to_favourites);
+            }
+        });
+
     }
 }
