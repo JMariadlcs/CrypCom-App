@@ -80,11 +80,12 @@
         android:id="@+id/NotifButton"
         android:layout_width="68dp"
         android:layout_height="37dp"
-        android:layout_marginEnd="268dp"
-        android:layout_marginBottom="476dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/MainGrey"
         android:src="@drawable/notifbutton"
-        app:layout_constraintBottom_toTopOf="@+id/bottomAppBar2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/upBar"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="@+id/upBar"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
