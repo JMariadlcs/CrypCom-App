@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_favourites"
             app:destination="@id/favourites" />
+        <action
+            android:id="@+id/action_FirstFragment_to_notifications"
+            app:destination="@id/notifications" />
     </fragment>
     <fragment
         android:id="@+id/profile"
@@ -23,15 +26,14 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profile_pop"
-            app:popUpTo="@id/profile"
-            app:popUpToInclusive="true" />
-        <action
             android:id="@+id/action_profile_to_FirstFragment"
             app:destination="@id/FirstFragment" />
         <action
             android:id="@+id/action_profile_to_favourites"
             app:destination="@id/favourites" />
+        <action
+            android:id="@+id/action_profile_to_notifications"
+            app:destination="@id/notifications" />
     </fragment>
     <fragment
         android:id="@+id/favourites"
@@ -43,6 +45,24 @@
             app:destination="@id/FirstFragment" />
         <action
             android:id="@+id/action_favourites_to_profile"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_favourites_to_notifications"
+            app:destination="@id/notifications" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifications"
+        android:name="com.crypcomapp.notifications"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_notifications_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_notifications_to_favourites"
+            app:destination="@id/favourites" />
+        <action
+            android:id="@+id/action_notifications_to_profile"
             app:destination="@id/profile" />
     </fragment>
 </navigation>
