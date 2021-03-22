@@ -82,7 +82,7 @@ public class notifications extends Fragment {
             }
         });
 
-        view.findViewById(R.id.FirstFragment).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.HomeButtton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(notifications.this).navigate(R.id.action_notifications_to_FirstFragment);
