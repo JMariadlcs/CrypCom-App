@@ -7,133 +7,130 @@
     android:background="#041C2C"
     tools:context=".FirstFragment" >
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar2"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="#e4e4ec"
-        app:backgroundTint="#E4E4EC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="BottomAppBar" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/HomeButtton"
-        android:layout_width="106dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="152dp"
-        android:backgroundTint="@color/MainGrey"
-        android:src="@drawable/icons8_home_48"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/bottomAppBar2"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="542dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="10dp">
 
-    <ImageButton
-        android:id="@+id/ProfileButton"
-        android:layout_width="108dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="21dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        android:backgroundTint="@color/MainGrey"
-        android:src="@drawable/profile_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toStartOf="@+id/bottomAppBar2"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
 
-    <ImageButton
-        android:id="@+id/FavouritesButton"
-        android:layout_width="94dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="21dp"
-        android:backgroundTint="@color/MainGrey"
-        android:src="@drawable/like_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bottomAppBar2"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="1.0" />
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
 
-    <ImageButton
-        android:id="@+id/upBar"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/MainColor"
-        android:src="@drawable/upbar"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
 
-    <TextView
-        android:id="@+id/HomeFavouriteProfile"
-        android:layout_width="76dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/allerta"
-        android:text="HOME"
-        android:textColor="@color/MainColor"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/upBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="@+id/upBar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
 
-    <ImageButton
-        android:id="@+id/NotifButton"
-        android:layout_width="68dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/MainGrey"
-        android:src="@drawable/notifbutton"
-        app:layout_constraintBottom_toTopOf="@+id/upBar"
-        app:layout_constraintEnd_toEndOf="@+id/upBar"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="@+id/upBar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033" />
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="367dp"
-        android:layout_height="580dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/HomeButtton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upBar"
-        app:layout_constraintVertical_bias="0.733">
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
+
+                <ImageButton
+                    android:id="@+id/imageButton7"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
+
+                <ImageButton
+                    android:id="@+id/imageButton8"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
+
+                <ImageButton
+                    android:id="@+id/imageButton9"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
+
+                <ImageButton
+                    android:id="@+id/imageButton10"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/MainColor"
+                    android:src="@drawable/upbar" />
+
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:backgroundTint="@color/MainColor"
-                android:src="@drawable/upbar" />
+                android:id="@+id/FavouritesButton"
+                android:layout_width="135dp"
+                android:layout_height="94dp"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/MainGrey"
+                android:src="@drawable/like_button" />
 
+            <ImageButton
+                android:id="@+id/HomeButtton"
+                android:layout_width="117dp"
+                android:layout_height="94dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:backgroundTint="@color/MainGrey"
+                android:src="@drawable/icons8_home_48" />
+
+            <ImageButton
+                android:id="@+id/ProfileButton"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:layout_marginTop="0dp"
+
+                android:backgroundTint="@color/MainGrey"
+                android:src="@drawable/profile_button" />
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

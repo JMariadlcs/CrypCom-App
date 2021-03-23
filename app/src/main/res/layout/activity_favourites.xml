@@ -1,31 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/MainColor"
-    tools:context=".MainActivity">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.CrypComApp.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/MainGrey"
-            app:popupTheme="@style/Theme.CrypComApp.PopupOverlay" />
-
-
-    </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/MainColor"
         android:orientation="vertical">
 
         <ScrollView
@@ -46,7 +27,7 @@
                     android:id="@+id/imageButton"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
+                    android:backgroundTint="@color/MainGrey"
                     android:src="@drawable/upbar" />
 
                 <ImageButton
@@ -126,8 +107,7 @@
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/like_button"
-                android:onClick="home_to_favourites"/>
+                android:src="@drawable/like_button" />
 
             <ImageButton
                 android:id="@+id/HomeButtton"
@@ -149,6 +129,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>
