@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FavouriteActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,19 +19,20 @@ public class FavouriteActivity extends AppCompatActivity {
         // Obtener referencia al TextView que visualizara el saludo
 
     }
-    public void favourites_to_home(View view){   // button for goint from favourites to home
-        ImageButton HomeButtonF = (ImageButton) findViewById(R.id.HomeButtonF);
+    public void profile_to_home(View view){
+        ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    public void profile_to_favourites(View view){
+        ImageButton FavouriteButtonP = (ImageButton) findViewById(R.id.FavouritesButtonP);
 
-    public void favourites_to_profile(View view){   // button for goint from favourites to home
-        ImageButton ProfileButtonF = (ImageButton) findViewById(R.id.ProfileButtonF);
-
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, FavouriteActivity.class);
         startActivity(intent);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

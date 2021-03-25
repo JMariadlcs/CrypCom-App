@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,9 +43,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void home_to_favourites(View view){
-        Button okButton = (Button) findViewById(R.id.FavouritesButton);
+        ImageButton FavouriteButton = (ImageButton) findViewById(R.id.FavouritesButton);
 
         Intent intent = new Intent(this, FavouriteActivity.class);
+        startActivity(intent);
+    }
+    public void home_to_profile(View view){
+        ImageButton ProfileButton = (ImageButton) findViewById(R.id.ProfileButton);
+
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 

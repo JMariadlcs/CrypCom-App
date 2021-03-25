@@ -24,10 +24,10 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/BitcoinButton"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    android:backgroundTint="@color/MainGrey"
+                    android:backgroundTint="@color/MainColor"
                     android:src="@drawable/upbar" />
 
                 <ImageButton
@@ -102,30 +102,33 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/FavouritesButton"
+                android:id="@+id/FavouritesButtonF"
                 android:layout_width="135dp"
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/like_button" />
+                android:src="@drawable/like_button"
+                />
 
             <ImageButton
-                android:id="@+id/HomeButtton"
+                android:id="@+id/HomeButtonF"
                 android:layout_width="117dp"
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/icons8_home_48" />
+                android:src="@drawable/icons8_home_48"
+                android:onClick="favourites_to_home"/>
 
             <ImageButton
-                android:id="@+id/ProfileButton"
+                android:id="@+id/ProfileButtonF"
                 android:layout_width="match_parent"
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
 
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/profile_button" />
+                android:src="@drawable/profile_button"
+                android:onClick="favourites_to_profile"/>
         </LinearLayout>
 
     </LinearLayout>
