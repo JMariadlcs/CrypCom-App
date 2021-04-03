@@ -138,38 +138,41 @@
             </LinearLayout>
         </ScrollView>
 
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/FavouritesButtonBitcoin"
+                android:id="@+id/FavouritesButtonEthereum"
                 android:layout_width="135dp"
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
                 android:src="@drawable/like_button"
-                android:onClick="bitcoin_to_favourites"/>
+                android:onClick="ethereum_to_favourites"/>
 
             <ImageButton
-                android:id="@+id/HomeButtonBitcoin"
+                android:id="@+id/HomeButtonEthereum"
                 android:layout_width="117dp"
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:backgroundTint="@color/MainGrey"
                 android:src="@drawable/icons8_home_48"
-                android:onClick="bitcoin_to_home"/>
+                android:onClick="ethereum_to_home"/>
 
             <ImageButton
-                android:id="@+id/ProfileButtonBitcoin"
+                android:id="@+id/ProfileButtonEthereum"
                 android:layout_width="match_parent"
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
                 android:src="@drawable/profile_button"
-                android:onClick="bitcoin_to_profile"/>
+                android:onClick="ethereum_to_profile"/>
 
         </LinearLayout>
 

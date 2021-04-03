@@ -9,26 +9,34 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProfileActivity extends AppCompatActivity {
+public class EthereumActivity extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_ethereum);
 
         // Obtener referencia al TextView que visualizara el saludo
 
     }
-    public void profile_to_home(View view){
-        ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
+
+    public void ethereum_to_home(View view){
+        ImageButton HomeButtonEthereum = (ImageButton) findViewById(R.id.HomeButtonEthereum);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void profile_to_favourites(View view){
-        ImageButton FavouriteButtonP = (ImageButton) findViewById(R.id.FavouritesButtonP);
+    public void ethereum_to_favourites(View view){
+        ImageButton FavouriteButtonEthereum = (ImageButton) findViewById(R.id.FavouritesButtonEthereum);
 
         Intent intent = new Intent(this, FavouriteActivity.class);
+        startActivity(intent);
+    }
+
+    public void ethereum_to_profile(View view){
+        ImageButton ProfileButtonEthereum = (ImageButton) findViewById(R.id.ProfileButtonEthereum);
+
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 

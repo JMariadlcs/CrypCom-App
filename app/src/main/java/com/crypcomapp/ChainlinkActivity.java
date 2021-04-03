@@ -9,26 +9,34 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ChainlinkActivity extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_chainlink);
 
         // Obtener referencia al TextView que visualizara el saludo
 
     }
-    public void profile_to_home(View view){
-        ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
+
+    public void chainlink_to_home(View view){
+        ImageButton HomeButtonChainlink = (ImageButton) findViewById(R.id.HomeButtonChainlink);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void profile_to_favourites(View view){
-        ImageButton FavouriteButtonP = (ImageButton) findViewById(R.id.FavouritesButtonP);
+    public void chainlink_to_favourites(View view){
+        ImageButton FavouriteButtonChainlink = (ImageButton) findViewById(R.id.FavouritesButtonChainlink);
 
         Intent intent = new Intent(this, FavouriteActivity.class);
+        startActivity(intent);
+    }
+
+    public void chainlink_to_profile(View view){
+        ImageButton ProfileButtonChainlink = (ImageButton) findViewById(R.id.ProfileButtonChainlink);
+
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 

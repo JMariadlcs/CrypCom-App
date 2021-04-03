@@ -9,26 +9,34 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProfileActivity extends AppCompatActivity {
+public class CardanoActivity extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_cardano);
 
         // Obtener referencia al TextView que visualizara el saludo
 
     }
-    public void profile_to_home(View view){
-        ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
+
+    public void cardano_to_home(View view){
+        ImageButton HomeButtonCardano = (ImageButton) findViewById(R.id.HomeButtonCardano);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void profile_to_favourites(View view){
-        ImageButton FavouriteButtonP = (ImageButton) findViewById(R.id.FavouritesButtonP);
+    public void cardano_to_favourites(View view){
+        ImageButton FavouriteButtonCardano = (ImageButton) findViewById(R.id.FavouritesButtonCardano);
 
         Intent intent = new Intent(this, FavouriteActivity.class);
+        startActivity(intent);
+    }
+
+    public void cardano_to_profile(View view){
+        ImageButton ProfileButtonCardano = (ImageButton) findViewById(R.id.ProfileButtonCardano);
+
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 

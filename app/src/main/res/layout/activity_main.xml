@@ -44,31 +44,35 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/crypto1Button"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:backgroundTint="@color/MainColor"
+                    android:onClick="home_to_crypto1"
                     android:src="@drawable/upbar" />
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/crypto2Button"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:backgroundTint="@color/MainColor"
+                    android:onClick="home_to_crypto2"
                     android:src="@drawable/upbar" />
 
                 <ImageButton
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/crypto3Button"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:backgroundTint="@color/MainColor"
+                    android:onClick="home_to_crypto3"
                     android:src="@drawable/upbar" />
 
                 <ImageButton
-                    android:id="@+id/imageButton5"
+                    android:id="@+id/crypto4Button"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:backgroundTint="@color/MainColor"
+                    android:onClick="home_to_crypto4"
                     android:src="@drawable/upbar" />
 
                 <ImageButton

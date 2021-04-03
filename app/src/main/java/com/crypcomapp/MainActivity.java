@@ -55,6 +55,34 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void home_to_crypto1(View view){
+        ImageButton crypto1Button = (ImageButton) findViewById(R.id.crypto1Button);
+
+        Intent intent = new Intent(this, BitcoinActivity.class);
+        startActivity(intent);
+    }
+
+    public void home_to_crypto2(View view){
+        ImageButton crypto2Button = (ImageButton) findViewById(R.id.crypto2Button);
+
+        Intent intent = new Intent(this, EthereumActivity.class);
+        startActivity(intent);
+    }
+
+    public void home_to_crypto3(View view){
+        ImageButton crypto3Button = (ImageButton) findViewById(R.id.crypto3Button);
+
+        Intent intent = new Intent(this, ChainlinkActivity.class);
+        startActivity(intent);
+    }
+
+    public void home_to_crypto4(View view){
+        ImageButton crypto4Button = (ImageButton) findViewById(R.id.crypto4Button);
+
+        Intent intent = new Intent(this, CardanoActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

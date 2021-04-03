@@ -14,21 +14,28 @@ public class BitcoinActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favourites);
+        setContentView(R.layout.activity_bitcoin);
 
         // Obtener referencia al TextView que visualizara el saludo
 
     }
-    public void profile_to_home(View view){
-        ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
+    public void bitcoin_to_home(View view){
+        ImageButton HomeButtonBitcoin = (ImageButton) findViewById(R.id.HomeButtonBitcoin);
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void profile_to_favourites(View view){
-        ImageButton FavouriteButtonP = (ImageButton) findViewById(R.id.FavouritesButtonP);
+    public void bitcoin_to_favourites(View view){
+        ImageButton FavouriteButtonBitcoin = (ImageButton) findViewById(R.id.FavouritesButtonBitcoin);
 
         Intent intent = new Intent(this, FavouriteActivity.class);
+        startActivity(intent);
+    }
+
+    public void bitcoin_to_profile(View view){
+        ImageButton ProfileButtonBitcoin = (ImageButton) findViewById(R.id.ProfileButtonBitcoin);
+
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 
