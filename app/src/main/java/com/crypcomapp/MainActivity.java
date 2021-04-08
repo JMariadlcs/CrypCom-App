@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+
     }
 
     public void home_to_favourites(View view){
