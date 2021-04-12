@@ -1,6 +1,8 @@
 package com.crypcomapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -9,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -37,18 +41,27 @@ class Bitcoin {
     public String getName() {
         return name;
     }
-    public double[] getPrices() { return prices; }
+    public double getPrices(int i) { return prices[i]; }
 
 }
 
 public class BitcoinActivity extends AppCompatActivity {
 
-
+    private TextView binanceprice;
+    private TextView coinbaseprice;
+    private TextView cryptocomprice;
+    private TextView blockchainprice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bitcoin);
+
+        // Creamos un listview que va a contener los resultados de las consulta a Google Places
+        binanceprice = (TextView) findViewById(R.id.binanceprice);
+        coinbaseprice = (TextView) findViewById(R.id.coinbaseprice);
+        cryptocomprice = (TextView) findViewById(R.id.cryptocomprice);
+        blockchainprice = (TextView) findViewById(R.id.blockchainprice);
 
         // Obtener referencia al TextView que visualizara el saludo
         new Bitcoins().execute();
@@ -78,17 +91,29 @@ public class BitcoinActivity extends AppCompatActivity {
             // Aquí se actualiza el interfaz de usuario
             List<String> listTitle = new ArrayList<String>();
 
-            for (int i = 0; i < result.size(); i++) {
-                // make a list of the venus that are loaded in the list.
-                // show the name, the category and the city
-                listTitle.add(i, "Place name: " +result.get(i).getName() + "\nLatitude: " + result.get(i).getLatitude() + "\nLongitude:" + result.get(i).getLongitude());
+            for (int i = 0; i < 4; i++) {
+
+                //array list con el precio de bitcoin en cada exchange. Elemento 0 = precio en BINANCE, Elemento 1 = precio en coinbase, etc
+                listTitle.add(i, "Currency name: " +result.get(0).getName() + "\nPrices: " + result.get(0).getPrices(i));
             }
 
             // set the results to the list
             // and show them in the xml
             ArrayAdapter<String> myAdapter;
-            myAdapter = new ArrayAdapter<String>(MainActivity.this, R.layout.row_layout, R.id.listText, listTitle);
-            m_listview.setAdapter(myAdapter);
+           // myAdapter = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.binanceprice, listTitle);
+            binanceprice.setText(Double.toString(result.get(0).getPrices(0)));
+
+            ArrayAdapter<String> myAdapter2;
+            myAdapter2 = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.coinbaseprice, listTitle);
+            coinbaseprice.setText((CharSequence) myAdapter2);
+
+            ArrayAdapter<String> myAdapter3;
+            myAdapter3 = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.cryptocomprice, listTitle);
+            cryptocomprice.setText((CharSequence) myAdapter3);
+
+            ArrayAdapter<String> myAdapter4;
+            myAdapter4 = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.blockchainprice, listTitle);
+            blockchainprice.setText((CharSequence) myAdapter4);
         }
     }
 
@@ -119,6 +144,7 @@ public class BitcoinActivity extends AppCompatActivity {
                 reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
                 reader.beginObject();
                 Bitcoin bitcoin = new Bitcoin();  //EL OBJETO BITCOIN SE CREA AQUI O MAS ABAJO???
+
                 while (reader.hasNext()){         //COMPROBAR SI EL WHILE LO HACEMOS BIEN O HAY QUE HACER MAS
                     String nameToRead = reader.nextName();
 
@@ -140,7 +166,7 @@ public class BitcoinActivity extends AppCompatActivity {
 
                                         //Cogemos el precio
                                         nameToRead=reader.nextName();
-                                        bitcoin.setPrices(reader.nextDouble(),0);
+                                       bitcoin.setPrices(reader.nextDouble(),0);
                                     }
 
                                     //comprobamos el exchange Coinbase Pro
@@ -179,6 +205,7 @@ public class BitcoinActivity extends AppCompatActivity {
                             }
                         }
                     }
+                    temp.add(bitcoin);
                 }
                 reader.endObject();
             } catch (Exception e) {

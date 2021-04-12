@@ -48,7 +48,7 @@
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
-                        android:text="30$"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
@@ -75,8 +75,8 @@
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
-                        android:text="30$"
                         android:textAlignment="center"
+                        android:text=""
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
                 </LinearLayout>
@@ -96,14 +96,14 @@
                     <TextView
                         android:id="@+id/cryptocomprice"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="117dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/MainGrey"
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
-                        android:text="30$"
                         android:textAlignment="center"
+                        android:text=""
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
                 </LinearLayout>
@@ -129,8 +129,8 @@
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
-                        android:text="30$"
                         android:textAlignment="center"
+                        android:text=""
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
                 </LinearLayout>
