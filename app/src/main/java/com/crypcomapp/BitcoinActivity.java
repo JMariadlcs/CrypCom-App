@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.JsonReader;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -67,16 +68,18 @@ public class BitcoinActivity extends AppCompatActivity {
         new Bitcoins().execute();
     }
 
-    private class Bitcoins extends AsyncTask<View, Void, ArrayList<Bitcoin>> {
+    private class Bitcoins extends AsyncTask<View, Void, Bitcoin> {
 
         @Override
-        protected ArrayList<Bitcoin> doInBackground(View... urls) {
-            ArrayList<Bitcoin> temp;
+        protected Bitcoin doInBackground(View... urls) {
+            Bitcoin temp;
             //print the call in the console
             System.out.println("https://api.coingecko.com/api/v3/coins/bitcoin/tickers");
 
             // make Call to the url
-            temp = makeCall("https://api.coingecko.com/api/v3/coins/bitcoin/tickers");
+
+                temp = makeCall("https://api.coingecko.com/api/v3/coins/bitcoin/tickers");
+
 
             return temp;
         }
@@ -87,42 +90,27 @@ public class BitcoinActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(ArrayList<Bitcoin> result) {
-            // Aquí se actualiza el interfaz de usuario
-            List<String> listTitle = new ArrayList<String>();
+        protected void onPostExecute(Bitcoin bitcoin) {
 
-            for (int i = 0; i < 4; i++) {
-
-                //array list con el precio de bitcoin en cada exchange. Elemento 0 = precio en BINANCE, Elemento 1 = precio en coinbase, etc
-                listTitle.add(i, "Currency name: " +result.get(0).getName() + "\nPrices: " + result.get(0).getPrices(i));
-            }
 
             // set the results to the list
             // and show them in the xml
-            ArrayAdapter<String> myAdapter;
-           // myAdapter = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.binanceprice, listTitle);
-            binanceprice.setText(Double.toString(result.get(0).getPrices(0)));
+            binanceprice.setText(Double.toString(bitcoin.getPrices(0)));
 
-            ArrayAdapter<String> myAdapter2;
-            myAdapter2 = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.coinbaseprice, listTitle);
-            coinbaseprice.setText((CharSequence) myAdapter2);
+            coinbaseprice.setText(Double.toString(bitcoin.getPrices(1)));
 
-            ArrayAdapter<String> myAdapter3;
-            myAdapter3 = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.cryptocomprice, listTitle);
-            cryptocomprice.setText((CharSequence) myAdapter3);
+            cryptocomprice.setText(Double.toString(bitcoin.getPrices(2)));
 
-            ArrayAdapter<String> myAdapter4;
-            myAdapter4 = new ArrayAdapter<String>(BitcoinActivity.this, R.layout.activity_bitcoin, R.id.blockchainprice, listTitle);
-            blockchainprice.setText((CharSequence) myAdapter4);
+            blockchainprice.setText(Double.toString(bitcoin.getPrices(3)));
         }
     }
 
-    public static ArrayList<Bitcoin> makeCall(String stringURL) {
-
+    public static Bitcoin makeCall(String stringURL)  {
+        System.out.println("MAKECALL METHOD");
         URL url = null;
         BufferedInputStream is = null;
         JsonReader reader;
-        ArrayList<Bitcoin> temp = new ArrayList<Bitcoin>();
+        Bitcoin bitcoin = new Bitcoin();  //EL OBJETO BITCOIN SE CREA AQUI O MAS ABAJO???
 
         try {
             url = new URL(stringURL);
@@ -132,89 +120,164 @@ public class BitcoinActivity extends AppCompatActivity {
 
         try {
             if (url != null) {
+                System.out.println("url not NULL");
                 HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
                 is = new BufferedInputStream(urlConnection.getInputStream());
+
             }
         } catch (IOException ioe) {
             System.out.println("IOException");
         }
 
         if (is != null) {
-            try {
+            try { //apartir de aqui cogemos de simulador java
+
                 reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
                 reader.beginObject();
-                Bitcoin bitcoin = new Bitcoin();  //EL OBJETO BITCOIN SE CREA AQUI O MAS ABAJO???
 
-                while (reader.hasNext()){         //COMPROBAR SI EL WHILE LO HACEMOS BIEN O HAY QUE HACER MAS
-                    String nameToRead = reader.nextName();
+                while(reader.hasNext()){
 
-                    //comprobamos base
-                    if(nameToRead.equals("base")){
-                        String base = reader.nextString();
-                        if(base.equals("BTC")){
+                    String name = reader.nextName();
+                    if(name.equals("tickers")){
+                        System.out.println("Data1");
+                        reader.beginArray();
 
-                            nameToRead = reader.nextName();
-                            //comprobamos target
-                            if(nameToRead.equals("target")){
-                                String target= reader.nextString();
-                                if(target.equals("USD")){
+                        while (reader.hasNext()) {
 
-                                    //comprobamos el exchange Binance
-                                    nameToRead=reader.nextName();
-                                    String name= reader.nextString();
-                                    if(name.equals("Binance")){
+                            reader.beginObject();
+                            // comienza un objeto
 
-                                        //Cogemos el precio
-                                        nameToRead=reader.nextName();
-                                       bitcoin.setPrices(reader.nextDouble(),0);
+                            while (reader.hasNext()) {
+
+                                name = reader.nextName();
+                                Log.i("debugjson",name);
+                                if(name.equals("base")){
+
+                                    System.out.println("Data2");
+                                    if(reader.nextString().equals("BTC")){
+                                        System.out.println("Data3");
+                                        name = reader.nextName();
+                                        Log.i("debugjson",name);
+                                        if(name.equals("target")){
+                                            System.out.println("Data4");
+                                            System.out.println(reader.nextString());
+                                            if(reader.nextString().equals("USD")){
+
+                                                System.out.println("Data5");
+                                                name = reader.nextName();
+                                                Log.i("debugjson",name);
+                                                if(name.equals("market")){
+                                                    System.out.println("Data6");
+                                                    reader.beginObject(); //object abierto para market
+                                                    while(reader.hasNext()){
+                                                        name = reader.nextName();
+                                                        Log.i("debugjson",name);
+                                                        if(reader.nextString().equals("Binance")){
+                                                            System.out.println("Data7");
+                                                            reader.endObject(); //cerramos object de market si es caso Binance
+                                                            name = reader.nextName();
+
+                                                            if(reader.nextString().equals("last")){ //cogemos el precio
+                                                                System.out.println("Data8");
+                                                                bitcoin.setPrices( reader.nextDouble(),0);
+                                                            }
+
+
+                                                        }else if(reader.nextString().equals("Coinbase Pro")){
+                                                            System.out.println("Data9");
+                                                            reader.endObject(); //cerramos object de market si es caso Binance
+                                                            name = reader.nextName();
+
+                                                            if(name.equals("last")){ //cogemos el precio
+                                                                System.out.println("Data10");
+                                                                bitcoin.setPrices( reader.nextDouble(),1);
+                                                            }
+
+                                                        }else if(reader.nextString().equals("Crypto.com")){
+                                                            System.out.println("Data11");
+                                                            reader.endObject(); //cerramos object de market si es caso Binance
+                                                            name = reader.nextName();
+
+                                                            if(name.equals("last")){ //cogemos el precio
+                                                                System.out.println("Data12");
+                                                                bitcoin.setPrices( reader.nextDouble(),2); //next double??
+                                                            }
+
+
+                                                        }else if(reader.nextString().equals("Bitfinex")){
+                                                            System.out.println("Data13");
+                                                            reader.endObject(); //cerramos object de market si es caso Binance
+                                                            name = reader.nextName();
+
+                                                            if(name.equals("last")){ //cogemos el precio
+                                                                System.out.println("Data14");
+                                                                bitcoin.setPrices( reader.nextDouble(),3);
+                                                            }
+
+
+                                                        }else{
+                                                            System.out.println("Data15");
+                                                            reader.endObject(); //cerramos object de market si no es ninguno de los 4
+                                                        }
+
+                                                    }
+
+                                                }else{
+                                                    System.out.println("Data16");
+                                                    reader.skipValue();
+                                                }
+
+                                            }else{
+                                                reader.endObject();
+                                            }
+
+
+                                        }else{
+                                            System.out.println("Data17");
+                                            reader.skipValue();
+                                        }
+                                    }else{
+                                        reader.endObject();
                                     }
 
-                                    //comprobamos el exchange Coinbase Pro
-                                    nameToRead=reader.nextName();
-                                    name= reader.nextString();
-                                    if(name.equals("Coinbase Pro")){
 
-                                        //Cogemos el precio
-                                        nameToRead=reader.nextName();
-                                        bitcoin.setPrices(reader.nextDouble(),1);
-                                    }
-
-                                    //comprobamos el exchange Crypto.com
-                                    nameToRead=reader.nextName();
-                                    name= reader.nextString();
-                                    if(name.equals("Crypto.com")){
-
-                                        //Cogemos el precio
-                                        nameToRead=reader.nextName();
-                                        bitcoin.setPrices(reader.nextDouble(),2);
-                                    }
-
-                                    //comprobamos el exchange Bitfinex
-                                    nameToRead=reader.nextName();
-                                    name= reader.nextString();
-                                    if(name.equals("Bitfinex")){
-
-                                        //Cogemos el precio
-                                        nameToRead=reader.nextName();
-                                        bitcoin.setPrices(reader.nextDouble(),2);
-                                    }
-
-
+                                }else{
+                                    System.out.println("Data18");
+                                    reader.skipValue();
                                 }
 
+                                System.out.println("Data19");
+
+                                reader.endObject();
                             }
+
+                            System.out.println("Data20");
+
+
                         }
+
+                        reader.endArray();
+                        System.out.println("Data21");
+                        } else {
+
+                        System.out.println("Data22");
+                            reader.skipValue();
+                        }
+
+
                     }
-                    temp.add(bitcoin);
-                }
-                reader.endObject();
+
+                   reader.endObject();
             } catch (Exception e) {
                 System.out.println("Exception");
-                return new ArrayList<Bitcoin>();
-            }
-        }
+                System.out.println(e);
 
-        return temp;}
+                return new Bitcoin();
+            }
+
+            }
+
+            return bitcoin;}
 
 //nuestro
 
