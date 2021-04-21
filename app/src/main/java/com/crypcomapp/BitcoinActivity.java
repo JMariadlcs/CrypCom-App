@@ -132,169 +132,96 @@ public class BitcoinActivity extends AppCompatActivity {
         if (is != null) {
             try { //apartir de aqui cogemos de simulador java
 
+
+                String name;
                 reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
                 reader.beginObject();
 
-                while(reader.hasNext()){
 
-                    String name = reader.nextName();
-                    if(name.equals("tickers")){
-                        System.out.println("Data1");
-                        reader.beginArray();
-
-                        while (reader.hasNext()) {
-
-                            reader.beginObject();
-                            // comienza un objeto
-
-                            while (reader.hasNext()) {
-
-                                name = reader.nextName();
-                                Log.i("debugjson",name);
-                                if(name.equals("base")){
-
-                                    System.out.println("Data2");
-                                    if(reader.nextString().equals("BTC")){
-                                        System.out.println("Data3");
-                                        name = reader.nextName();
-                                        Log.i("debugjson",name);
-                                        if(name.equals("target")){
-                                            System.out.println("Data4");
-                                         //   System.out.println(reader.nextString());
-                                            if(reader.nextString().equals("USD")){
-
-                                                System.out.println("Data5");
-                                                name = reader.nextName();
-                                                Log.i("debugjson",name);
-                                                if(name.equals("market")){
-                                                    System.out.println("Data6");
-                                                    reader.beginObject(); //object abierto para market
-
-                                                    while(reader.hasNext()) {
-                                                        name = reader.nextName();
-                                                        Log.i("debugjson", name);
-                                                        System.out.println(name);
-                                                        System.out.println("dentro de while market");
-                                                        if (name.equals("name")){
-                                                            System.out.println("dentro de parametro name");
-
-                                                            String exchange = reader.nextString();
-                                                            System.out.println(exchange);
-
-                                                        if (exchange.equals("Binance")) {
-                                                            System.out.println("Data7");
-                                                            reader.endObject(); //cerramos object de market si es caso Binance NO SE SI HAY QUE CERRARLO - COMPROBAR
-                                                            name = reader.nextName();
-
-                                                            if (name.equals("last")) { //cogemos el precio
-                                                                System.out.println("Data8");
-                                                                bitcoin.setPrices(reader.nextDouble(), 0);
-                                                            }
-
-
-                                                        } else if (exchange.equals("Coinbase Pro")) {
-                                                            System.out.println("Data9");
-                                                           reader.endObject(); //cerramos object de market si es caso Binance
-                                                            System.out.println("coinbassepro object cerrado");
-                                                            name = reader.nextName();
-                                                            System.out.println(name);
-                                                            if (name.equals("last")) { //cogemos el precio
-                                                                System.out.println("Data10");
-                                                                bitcoin.setPrices(reader.nextDouble(), 1);
-                                                            }
-
-                                                        } else if (exchange.equals("Crypto.com")) {
-                                                            System.out.println("Data11");
-                                                            reader.endObject(); //cerramos object de market si es caso Binance
-                                                            name = reader.nextName();
-
-                                                            if (name.equals("last")) { //cogemos el precio
-                                                                System.out.println("Data12");
-                                                                bitcoin.setPrices(reader.nextDouble(), 2); //next double??
-                                                            }
-
-
-                                                        } else if (exchange.equals("Bitfinex")) {
-                                                            System.out.println("Data13");
-                                                            reader.endObject(); //cerramos object de market si es caso Binance
-                                                            System.out.println("hola");
-                                                            System.out.println(name);
-                                                            name = reader.nextName();
-                                                            System.out.println("hola..");
-                                                            System.out.println(name);
-                                                            if (name.equals("last")) { //cogemos el precio
-                                                                System.out.println("Data14");
-                                                                bitcoin.setPrices(reader.nextDouble(), 3);
-                                                            }
-
-
-                                                        } else {
-                                                            //el codigo se para aquí (salta excepción)
-                                                            System.out.println("Data15");
-                                                            reader.endObject(); //cerramos object de market si no es ninguno de los 4
-
-
-                                                       }
-                                                    }else{
-                                                        System.out.println("else de name");
-                                                        reader.skipValue();
-                                                    }
-
-
-                                                        reader.endObject(); //cerramos el object el primer tickers
-                                                        name = reader.nextName();
-
-                                                    }
+                name = reader.nextName();reader.skipValue();    // leemos name: bitcoin
+                name = reader.nextName();                       //leemos tickers: [...
 
 
 
-                                                }else{
-                                                    System.out.println("Data16");
-                                                    reader.skipValue();
-                                                }
+                /*          DENTRO DE ARRAY         */
 
-                                            }else{
-                                                reader.endObject(); //quitar o poner?
-                                            }
+                reader.beginArray();
+                System.out.println("Abrimos array");
+                while(reader.hasNext()){     //vamos leyendo objetos del array
 
+                    reader.beginObject();   //abrimos objeto ticker
+                    name = reader.nextName();      //leemos base
+                    System.out.println("leemos base");
+                    if(reader.nextString().equals("BTC")){
+                        System.out.println("base es BTC");
+                        //reader.skipValue();
+                        name = reader.nextName();      //leemos target
+                        System.out.println("leemos target");
+                        if(reader.nextString().equals("USD")){
+                            System.out.println("target es USD");
+                            //reader.skipValue();
+                            name = reader.nextName();   //leemos market
+                            reader.beginObject();       //abrimos objeto market
 
-                                        }else{
-                                            System.out.println("Data17");
-                                            reader.skipValue();
-                                        }
-                                    }else{
-                                        reader.endObject();
-                                    }
+                            /*          DENTRO DE MARKET         */
+                            name = reader.nextName();   //leemos name:
+                            System.out.println("leemos name de market");
+                            if(reader.nextString().equals("FTX.US")){
+                                System.out.println("market es binance");
+                                //reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.endObject();     //salimos de market
 
-
-                                }else{
-                                    System.out.println("Data18");
+                                reader.nextName();      //cogemos Last
+                                bitcoin.setPrices(reader.nextDouble(), 0);
+                                System.out.println("El precio es" + bitcoin.getPrices(0));
+                                while(reader.hasNext()){    //vamos saltandonos el resto de tokens
+                                    reader.nextName();
                                     reader.skipValue();
-                                }
+                                }//salimos al while de leer objetos de array
 
-                                System.out.println("Data19");
+                                //aqui añadimos el resto con ELSE IF
 
+                            }else{      //si no nos interesa el market
+                                System.out.println("no nos interesa el market");
+                                //reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.endObject();     //salimos de market
 
+                                while(reader.hasNext()){    //vamos saltandonos el resto de tokens
+                                    reader.nextName();
+                                    reader.skipValue();
+                                }//salimos al while de leer objetos de array
                             }
 
-                            reader.endObject();
-                            System.out.println("Data20");
 
+                        }else{  //si no es USD
+                            System.out.println("target no es USD");
+                            //reader.skipValue();     //obviamos valor de target
+                            while(reader.hasNext()){    //vamos saltandonos el resto de tokens
 
+                                reader.nextName();
+                                reader.skipValue();
+                            }
                         }
 
-                        reader.endArray();
-                        System.out.println("Data21");
-                        } else {
+                    }else{      //si no es BTC
+                        System.out.println("base no es BTC");
+                        //reader.skipValue();     //obviamos valor de base
+                        while(reader.hasNext()){    //vamos saltandonos el resto de tokens
 
-                        System.out.println("Data22");
+                            reader.nextName();
                             reader.skipValue();
                         }
-
-
                     }
+                }
+                System.out.println("cerramos array");
+                reader.endArray();      //  Cerramos array
+                reader.endObject();
 
-                   reader.endObject();
+
             } catch (Exception e) {
                 System.out.println("Exception");
                 System.out.println(e);
