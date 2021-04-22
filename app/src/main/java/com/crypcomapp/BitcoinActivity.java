@@ -28,6 +28,7 @@ import javax.net.ssl.HttpsURLConnection;
 class Bitcoin {
     private String name;
     private double[] prices;
+    // 0. Binance   1. Coinbase      2. Crypto.com      3. FTX.US
 
 
     public Bitcoin() {
@@ -156,32 +157,82 @@ public class BitcoinActivity extends AppCompatActivity {
                         System.out.println("base es BTC");
                         //reader.skipValue();
                         name = reader.nextName();      //leemos target
+                        String target = reader.nextString();
                         System.out.println("leemos target");
-                        if(reader.nextString().equals("USD")){
+                        if(target.equals("USD") || target.equals("USDT")){
                             System.out.println("target es USD");
                             //reader.skipValue();
                             name = reader.nextName();   //leemos market
                             reader.beginObject();       //abrimos objeto market
 
                             /*          DENTRO DE MARKET         */
+
                             name = reader.nextName();   //leemos name:
-                            System.out.println("leemos name de market");
-                            if(reader.nextString().equals("FTX.US")){
+                            String exchange = reader.nextString();
+
+                            System.out.println("leemos name de market: " + exchange);
+                            if(exchange.equals("Binance US")) {
                                 System.out.println("market es binance");
+                                //reader.skipValue();
+                                reader.nextName();
+                                reader.skipValue();
+                                reader.nextName();
+                                reader.skipValue();
+                                reader.endObject();     //salimos de market
+
+                                reader.nextName();      //cogemos Last
+                                bitcoin.setPrices(reader.nextDouble(), 0);
+                                System.out.println("El precio es" + bitcoin.getPrices(0));
+                                while (reader.hasNext()) {    //vamos saltandonos el resto de tokens
+                                    reader.nextName();
+                                    reader.skipValue();
+                                }//salimos al while de leer objetos de array
+
+                            }else if(exchange.equals("Coinbase Pro")){
+                                System.out.println("market es Coinbase");
                                 //reader.skipValue();
                                 reader.nextName();reader.skipValue();
                                 reader.nextName();reader.skipValue();
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                bitcoin.setPrices(reader.nextDouble(), 0);
-                                System.out.println("El precio es" + bitcoin.getPrices(0));
+                                bitcoin.setPrices(reader.nextDouble(), 1);
+                                System.out.println("El precio es" + bitcoin.getPrices(1));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
                                     reader.skipValue();
                                 }//salimos al while de leer objetos de array
 
-                                //aqui añadimos el resto con ELSE IF
+                            }else if(exchange.equals("Crypto.com")){
+                                System.out.println("market es Crypto.com");
+                                //reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.endObject();     //salimos de market
+
+                                reader.nextName();      //cogemos Last
+                                bitcoin.setPrices(reader.nextDouble(), 2);
+                                System.out.println("El precio es" + bitcoin.getPrices(2));
+                                while(reader.hasNext()){    //vamos saltandonos el resto de tokens
+                                    reader.nextName();
+                                    reader.skipValue();
+                                }//salimos al while de leer objetos de array
+
+
+                            }else if(exchange.equals("FTX.US")){
+                                System.out.println("market es FTX.US");
+                                //reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.nextName();reader.skipValue();
+                                reader.endObject();     //salimos de market
+
+                                reader.nextName();      //cogemos Last
+                                bitcoin.setPrices(reader.nextDouble(), 3);
+                                System.out.println("El precio es" + bitcoin.getPrices(3));
+                                while(reader.hasNext()){    //vamos saltandonos el resto de tokens
+                                    reader.nextName();
+                                    reader.skipValue();
+                                }//salimos al while de leer objetos de array
 
                             }else{      //si no nos interesa el market
                                 System.out.println("no nos interesa el market");
@@ -202,7 +253,7 @@ public class BitcoinActivity extends AppCompatActivity {
                             //reader.skipValue();     //obviamos valor de target
                             while(reader.hasNext()){    //vamos saltandonos el resto de tokens
 
-                                reader.nextName();
+                                //reader.nextName();
                                 reader.skipValue();
                             }
                         }
@@ -212,10 +263,11 @@ public class BitcoinActivity extends AppCompatActivity {
                         //reader.skipValue();     //obviamos valor de base
                         while(reader.hasNext()){    //vamos saltandonos el resto de tokens
 
-                            reader.nextName();
+                            //reader.nextName();
                             reader.skipValue();
                         }
                     }
+                    reader.endObject();     //cerramos objeto tickers
                 }
                 System.out.println("cerramos array");
                 reader.endArray();      //  Cerramos array
