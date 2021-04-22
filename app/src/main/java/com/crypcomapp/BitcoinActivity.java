@@ -66,7 +66,7 @@ public class BitcoinActivity extends AppCompatActivity {
         ftxprice = (TextView) findViewById(R.id.ftxprice);
 
         // Obtener referencia al TextView que visualizara el saludo
-        new Bitcoins().execute();
+        new Bitcoins().execute(); //hacemos execute
     }
 
     private class Bitcoins extends AsyncTask<View, Void, Bitcoin> {
