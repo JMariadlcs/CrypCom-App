@@ -52,7 +52,7 @@ public class BitcoinActivity extends AppCompatActivity {
     private TextView binanceprice;
     private TextView coinbaseprice;
     private TextView cryptocomprice;
-    private TextView blockchainprice;
+    private TextView ftxprice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class BitcoinActivity extends AppCompatActivity {
         binanceprice = (TextView) findViewById(R.id.binanceprice);
         coinbaseprice = (TextView) findViewById(R.id.coinbaseprice);
         cryptocomprice = (TextView) findViewById(R.id.cryptocomprice);
-        blockchainprice = (TextView) findViewById(R.id.blockchainprice);
+        ftxprice = (TextView) findViewById(R.id.ftxprice);
 
         // Obtener referencia al TextView que visualizara el saludo
         new Bitcoins().execute();
@@ -102,7 +102,7 @@ public class BitcoinActivity extends AppCompatActivity {
 
             cryptocomprice.setText(Double.toString(bitcoin.getPrices(2)));
 
-            blockchainprice.setText(Double.toString(bitcoin.getPrices(3)));
+            ftxprice.setText(Double.toString(bitcoin.getPrices(3)));
         }
     }
 

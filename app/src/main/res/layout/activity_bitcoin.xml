@@ -48,7 +48,7 @@
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
-                        android:text=""
+                        android:text="Loading..."
                         android:textAlignment="center"
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
@@ -75,7 +75,7 @@
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
-                        android:text=""
+                        android:text="Loading..."
                         android:textAlignment="center"
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
@@ -102,8 +102,8 @@
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
+                        android:text="Loading..."
                         android:textAlignment="center"
-                        android:text=""
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
                 </LinearLayout>
@@ -121,7 +121,7 @@
                         app:srcCompat="@drawable/blockchain2" />
 
                     <TextView
-                        android:id="@+id/blockchainprice"
+                        android:id="@+id/ftxprice"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -129,8 +129,8 @@
                         android:drawableTint="@color/MainGrey"
                         android:fontFamily="@font/allerta"
                         android:foregroundTint="@color/MainGrey"
+                        android:text="Loading..."
                         android:textAlignment="center"
-                        android:text=""
                         android:textColor="@color/MainGrey"
                         android:textSize="40sp" />
                 </LinearLayout>
