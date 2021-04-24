@@ -115,13 +115,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12"
+            android:gravity="bottom"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/FavouritesButton"
-                android:layout_width="135dp"
-                android:layout_height="94dp"
+                android:layout_width="0dp"
+                android:layout_weight="33"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
                 android:onClick="home_to_favourites"
@@ -129,8 +132,9 @@
 
             <ImageButton
                 android:id="@+id/HomeButton"
-                android:layout_width="117dp"
-                android:layout_height="94dp"
+                android:layout_width="0dp"
+                android:layout_weight="33"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:backgroundTint="@color/MainGrey"
@@ -138,13 +142,14 @@
 
             <ImageButton
                 android:id="@+id/ProfileButton"
-                android:layout_width="match_parent"
-                android:layout_height="94dp"
+                android:layout_width="0dp"
+                android:layout_weight="33"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
-
                 android:backgroundTint="@color/MainGrey"
                 android:onClick="home_to_profile"
                 android:src="@drawable/profile_button" />
+
         </LinearLayout>
 
     </LinearLayout>

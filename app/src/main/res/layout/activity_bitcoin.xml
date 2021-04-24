@@ -12,14 +12,14 @@
         android:orientation="vertical">
 
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="88"
+                >
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -29,13 +29,14 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="20">
 
                     <ImageView
                         android:id="@+id/binanceimage"
-                        android:layout_width="392dp"
-                        android:layout_height="100dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/binance" />
 
@@ -51,18 +52,20 @@
                         android:text="Loading..."
                         android:textAlignment="center"
                         android:textColor="@color/MainGrey"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:gravity="center"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="20">
 
                     <ImageView
                         android:id="@+id/coinbaseimage"
-                        android:layout_width="392dp"
-                        android:layout_height="100dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/coinbase" />
 
@@ -78,25 +81,27 @@
                         android:text="Loading..."
                         android:textAlignment="center"
                         android:textColor="@color/MainGrey"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:gravity="center"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="20">
 
                     <ImageView
                         android:id="@+id/cryptocomimage"
-                        android:layout_width="392dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/cryptocom2" />
 
                     <TextView
                         android:id="@+id/cryptocomprice"
                         android:layout_width="match_parent"
-                        android:layout_height="117dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:backgroundTint="@color/MainGrey"
                         android:drawableTint="@color/MainGrey"
@@ -105,18 +110,20 @@
                         android:text="Loading..."
                         android:textAlignment="center"
                         android:textColor="@color/MainGrey"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:gravity="center"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="20">
 
                     <ImageView
                         android:id="@+id/blockchainimage"
-                        android:layout_width="392dp"
-                        android:layout_height="100dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/blockchain2" />
 
@@ -132,44 +139,52 @@
                         android:text="Loading..."
                         android:textAlignment="center"
                         android:textColor="@color/MainGrey"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:gravity="center"/>
                 </LinearLayout>
 
+
+
             </LinearLayout>
-        </ScrollView>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12"
+            android:gravity="bottom"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/FavouritesButtonBitcoin"
-                android:layout_width="135dp"
-                android:layout_height="94dp"
+                android:layout_width="0dp"
+                android:layout_weight="33"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/like_button"
-                android:onClick="bitcoin_to_favourites"/>
+                android:onClick="bitcoin_to_favourites"
+                android:src="@drawable/like_button" />
 
             <ImageButton
                 android:id="@+id/HomeButtonBitcoin"
-                android:layout_width="117dp"
-                android:layout_height="94dp"
+                android:layout_width="0dp"
+                android:layout_weight="33"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/icons8_home_48"
-                android:onClick="bitcoin_to_home"/>
+                android:onClick="bitcoin_to_home"
+                android:src="@drawable/icons8_home_48" />
 
             <ImageButton
                 android:id="@+id/ProfileButtonBitcoin"
-                android:layout_width="match_parent"
-                android:layout_height="94dp"
+                android:layout_width="0dp"
+                android:layout_weight="33"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/profile_button"
-                android:onClick="bitcoin_to_profile"/>
+                android:onClick="bitcoin_to_profile"
+                android:src="@drawable/profile_button" />
 
         </LinearLayout>
 
