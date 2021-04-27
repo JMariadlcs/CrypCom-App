@@ -75,41 +75,6 @@
                     android:onClick="home_to_crypto4"
                     android:src="@drawable/upbar" />
 
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton7"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton8"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton9"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton10"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
             </LinearLayout>
         </ScrollView>
 

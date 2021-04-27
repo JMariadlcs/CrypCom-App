@@ -22,7 +22,7 @@ import javax.net.ssl.HttpsURLConnection;
 class Chainlink {
     private String name;
     private double[] prices;
-    // 0. Binance   1. Coinbase      2. Crypto.com      3. FTX.US
+    // 0. Binance US   1. Coinbase      2. Crypto.com      3. FTX.US
 
 
     public Chainlink() {
@@ -153,7 +153,7 @@ public class ChainlinkActivity extends AppCompatActivity {
                         name = reader.nextName();      //leemos target
                         String target = reader.nextString();
                         System.out.println("leemos target");
-                        if(target.equals("USD")){
+                        if(target.equals("USD") || target.equals("USDT")){
                             System.out.println("target es USD");
                             //reader.skipValue();
                             name = reader.nextName();   //leemos market

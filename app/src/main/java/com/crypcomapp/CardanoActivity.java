@@ -22,7 +22,7 @@ import javax.net.ssl.HttpsURLConnection;
 class Cardano {
     private String name;
     private double[] prices;
-    // 0. Binance   1. Coinbase      2. Crypto.com      3. FTX.US
+    // 0. Binance   1. Coinbase      2. Crypto.com      3. Digifinex
 
 
     public Cardano() {
@@ -46,7 +46,7 @@ public class CardanoActivity extends AppCompatActivity {
     private TextView binanceprice;
     private TextView coinbaseprice;
     private TextView cryptocomprice;
-    private TextView blockchainprice;
+    private TextView Digifinexprice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class CardanoActivity extends AppCompatActivity {
         binanceprice = (TextView) findViewById(R.id.cardanobinanceprice);
         coinbaseprice = (TextView) findViewById(R.id.cardanocoinbaseprice);
         cryptocomprice = (TextView) findViewById(R.id.cardanocryptocomprice);
-        blockchainprice = (TextView) findViewById(R.id.cardanoblockchainprice);
+        Digifinexprice = (TextView) findViewById(R.id.cardanoDigifinexprice);
 
         // Obtener referencia al TextView que visualizara el saludo
         new Cardanos().execute(); //hacemos execute
@@ -97,7 +97,7 @@ public class CardanoActivity extends AppCompatActivity {
 
             cryptocomprice.setText(Double.toString(cardano.getPrices(2)));
 
-            blockchainprice.setText(Double.toString(cardano.getPrices(3)));
+            Digifinexprice.setText(Double.toString(cardano.getPrices(3)));
         }
     }
 
@@ -214,8 +214,8 @@ public class CardanoActivity extends AppCompatActivity {
                                 }//salimos al while de leer objetos de array
 
 
-                            }else if(exchange.equals("FTX.US")){
-                                System.out.println("market es FTX.US");
+                            }else if(exchange.equals("Digifinex")){
+                                System.out.println("market es Digifinex");
                                 //reader.skipValue();
                                 reader.nextName();reader.skipValue();
                                 reader.nextName();reader.skipValue();

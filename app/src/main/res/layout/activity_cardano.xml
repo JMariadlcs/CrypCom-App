@@ -25,7 +25,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="133dp"
-                app:srcCompat="@drawable/bitcoin" />
+                app:srcCompat="@drawable/cardano" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                 android:layout_weight="20">
 
                 <ImageView
-                    android:id="@+id/cryptocomimage"
+                    android:id="@+id/bitfineximage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -121,14 +121,14 @@
                 android:layout_weight="20">
 
                 <ImageView
-                    android:id="@+id/blockchainimage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/ftximage"
+                    android:layout_width="match_parent"
+                    android:layout_height="142dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/blockchain2" />
+                    app:srcCompat="@drawable/digifinex" />
 
                 <TextView
-                    android:id="@+id/cardanoblockchainprice"
+                    android:id="@+id/cardanoDigifinexprice"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
