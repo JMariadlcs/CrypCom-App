@@ -1,15 +1,22 @@
 package com.crypcomapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
+
+
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +24,38 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         // Obtener referencia al TextView que visualizara el saludo
+        TextView Usersave = (TextView)findViewById(R.id.Usersave);
+        TextView bitcoinsave = (TextView)findViewById(R.id.bitcoinsave);
+        TextView ethereumsave = (TextView)findViewById(R.id.ethereumsave);
+        TextView chainlinksave = (TextView)findViewById(R.id.chainlinksave);
+        TextView dogesave = (TextView)findViewById(R.id.dogesave);
+        TextView polkadotsave = (TextView)findViewById(R.id.polkadotsave);
+        TextView cardanosave = (TextView)findViewById(R.id.cardanosave);
 
+        // Recuperamos la informacion salvada en la preferencia
+        String sharedPrefFile = "com.crypcomappprefs";
+        SharedPreferences mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
+
+        String Username = mPreferences.getString("Username", "Username");
+        String Bitcoin = mPreferences.getString("Bitcoin", "0");
+        String Ethereum = mPreferences.getString("Ethereum", "0");
+        String Chainlink = mPreferences.getString("Chainlink", "0");
+        String Doge = mPreferences.getString("Doge", "0");
+        String Polkadot = mPreferences.getString("Polkadot", "0");
+        String Cardano = mPreferences.getString("Cardano", "0");
+
+        // Construimos el saludo a mostrar
+        if(Username!=null || !Username.equals("")) {
+            Usersave.setText(Username);
+        }
+        if(bitcoinsave!=null || !bitcoinsave.equals("")) {
+            bitcoinsave.setText(Bitcoin);
+        }
+        ethereumsave.setText(Ethereum);
+        chainlinksave.setText(Chainlink);
+        dogesave.setText(Doge);
+        polkadotsave.setText(Polkadot);
+        cardanosave.setText(Cardano);
     }
     public void profile_to_home(View view){
         ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
@@ -29,6 +67,13 @@ public class ProfileActivity extends AppCompatActivity {
         ImageButton FavouriteButtonP = (ImageButton) findViewById(R.id.FavouritesButtonP);
 
         Intent intent = new Intent(this, FavouriteActivity.class);
+        startActivity(intent);
+    }
+
+    public void profile_to_profileEdit(View view){
+        Button EditButton = (Button) findViewById(R.id.EditButton);
+
+        Intent intent = new Intent(this, ProfileEditActivity.class);
         startActivity(intent);
     }
 
