@@ -181,7 +181,7 @@ public class BitcoinActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                bitcoin.setPrices(reader.nextDouble(), 0);
+                                bitcoin.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 0);
                                 System.out.println("El precio es" + bitcoin.getPrices(0));
                                 while (reader.hasNext()) {    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -196,7 +196,7 @@ public class BitcoinActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                bitcoin.setPrices(reader.nextDouble(), 1);
+                                bitcoin.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 1);
                                 System.out.println("El precio es" + bitcoin.getPrices(1));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -211,7 +211,7 @@ public class BitcoinActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                bitcoin.setPrices(reader.nextDouble(), 2);
+                                bitcoin.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 2);
                                 System.out.println("El precio es" + bitcoin.getPrices(2));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -227,7 +227,7 @@ public class BitcoinActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                bitcoin.setPrices(reader.nextDouble(), 3);
+                                bitcoin.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 3);
                                 System.out.println("El precio es" + bitcoin.getPrices(3));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();

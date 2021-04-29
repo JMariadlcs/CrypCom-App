@@ -175,7 +175,7 @@ public class ChainlinkActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                chainlink.setPrices(reader.nextDouble(), 0);
+                                chainlink.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 0);
                                 System.out.println("El precio es" + chainlink.getPrices(0));
                                 while (reader.hasNext()) {    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -190,7 +190,7 @@ public class ChainlinkActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                chainlink.setPrices(reader.nextDouble(), 1);
+                                chainlink.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 1);
                                 System.out.println("El precio es" + chainlink.getPrices(1));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -205,7 +205,7 @@ public class ChainlinkActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                chainlink.setPrices(reader.nextDouble(), 2);
+                                chainlink.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 2);
                                 System.out.println("El precio es" + chainlink.getPrices(2));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -221,7 +221,7 @@ public class ChainlinkActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                chainlink.setPrices(reader.nextDouble(), 3);
+                                chainlink.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 3);
                                 System.out.println("El precio es" + chainlink.getPrices(3));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();

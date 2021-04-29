@@ -176,7 +176,7 @@ public class CardanoActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                cardano.setPrices(reader.nextDouble(), 0);
+                                cardano.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 0);
                                 System.out.println("El precio es" + cardano.getPrices(0));
                                 while (reader.hasNext()) {    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -191,7 +191,7 @@ public class CardanoActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                cardano.setPrices(reader.nextDouble(), 1);
+                                cardano.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 1);
                                 System.out.println("El precio es" + cardano.getPrices(1));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -206,7 +206,7 @@ public class CardanoActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                cardano.setPrices(reader.nextDouble(), 2);
+                                cardano.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 2);
                                 System.out.println("El precio es" + cardano.getPrices(2));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -222,7 +222,8 @@ public class CardanoActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                cardano.setPrices(reader.nextDouble(), 3);
+
+                                cardano.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 3);
                                 System.out.println("El precio es" + cardano.getPrices(3));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();

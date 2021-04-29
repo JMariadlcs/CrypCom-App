@@ -171,7 +171,7 @@ public class EthereumActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                ethereum.setPrices(reader.nextDouble(), 0);
+                                ethereum.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 0);
                                 System.out.println("El precio es" + ethereum.getPrices(0));
                                 while (reader.hasNext()) {    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -186,7 +186,7 @@ public class EthereumActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                ethereum.setPrices(reader.nextDouble(), 1);
+                                ethereum.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 1);
                                 System.out.println("El precio es" + ethereum.getPrices(1));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -201,7 +201,7 @@ public class EthereumActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                ethereum.setPrices(reader.nextDouble(), 2);
+                                ethereum.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 2);
                                 System.out.println("El precio es" + ethereum.getPrices(2));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
@@ -217,7 +217,7 @@ public class EthereumActivity extends AppCompatActivity {
                                 reader.endObject();     //salimos de market
 
                                 reader.nextName();      //cogemos Last
-                                ethereum.setPrices(reader.nextDouble(), 3);
+                                ethereum.setPrices((double)Math.round(reader.nextDouble() * 1000d) / 1000d, 3);
                                 System.out.println("El precio es" + ethereum.getPrices(3));
                                 while(reader.hasNext()){    //vamos saltandonos el resto de tokens
                                     reader.nextName();
