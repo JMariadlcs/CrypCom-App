@@ -199,8 +199,8 @@
                 android:layout_height="94dp"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/MainGrey"
-                android:src="@drawable/like_button"
-                android:onClick="profile_to_favourites"/>
+                android:onClick="profile_to_favourites"
+                android:src="@drawable/icons8_calculator_48" />
 
             <ImageButton
                 android:id="@+id/HomeButtonP"
