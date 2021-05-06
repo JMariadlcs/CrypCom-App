@@ -29,6 +29,14 @@
 
         </activity>
 
+        <activity
+            android:name=".FavouriteEditActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.CrypComApp.ActionBar">
+
+        </activity>
+
 
         <activity
             android:name=".ProfileActivity"

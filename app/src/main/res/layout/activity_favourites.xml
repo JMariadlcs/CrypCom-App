@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -8,6 +11,8 @@
         android:layout_height="match_parent"
         android:background="@color/MainColor"
         android:orientation="vertical">
+
+
 
         <ScrollView
             android:id="@+id/scrollView2"
@@ -23,76 +28,75 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/BitcoinButton"
+                <ImageView
+                    android:id="@+id/bitcoinimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
+                    app:srcCompat="@drawable/bitcoin" />
 
-                <ImageButton
-                    android:id="@+id/imageButton2"
+                <TextView
+                    android:id="@+id/bitcoincalculated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textAlignment="center"
+                    android:textColor="@color/MainGrey"
+                    android:textSize="35sp" />
+
+
+                <ImageView
+                    android:id="@+id/ethereumimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
+                    app:srcCompat="@drawable/ethereum" />
 
-                <ImageButton
-                    android:id="@+id/imageButton3"
+                <TextView
+                    android:id="@+id/ethereumcalculated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textAlignment="center"
+                    android:textColor="@color/MainGrey"
+                    android:textSize="35sp" />
+
+                <ImageView
+                    android:id="@+id/chainlinkimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
+                    app:srcCompat="@drawable/chainlink" />
 
-                <ImageButton
-                    android:id="@+id/imageButton4"
+                <TextView
+                    android:id="@+id/chainlinkcalculated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textAlignment="center"
+                    android:textColor="@color/MainGrey"
+                    android:textSize="35sp" />
+
+                <ImageView
+                    android:id="@+id/cardanoimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
+                    app:srcCompat="@drawable/cardano" />
 
-                <ImageButton
-                    android:id="@+id/imageButton5"
+                <TextView
+                    android:id="@+id/cardanocalculated"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
+                    android:layout_height="wrap_content"
+                    
+                    android:textAlignment="center"
+                    android:textColor="@color/MainGrey"
+                    android:textSize="35sp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton6"
+                <Button
+                    android:id="@+id/EditButton"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton7"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton8"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton9"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
-                <ImageButton
-                    android:id="@+id/imageButton10"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:backgroundTint="@color/MainColor"
-                    android:src="@drawable/upbar" />
-
+                    android:layout_height="66dp"
+                    android:background="#FFC107"
+                    android:backgroundTint="#FFC107"
+                    android:text="Edit Calculations"
+                    android:onClick="favourites_to_favouritesEdit"/>
             </LinearLayout>
         </ScrollView>
 

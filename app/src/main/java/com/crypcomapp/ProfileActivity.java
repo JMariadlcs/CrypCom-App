@@ -51,11 +51,21 @@ public class ProfileActivity extends AppCompatActivity {
         if(bitcoinsave!=null || !bitcoinsave.equals("")) {
             bitcoinsave.setText(Bitcoin);
         }
-        ethereumsave.setText(Ethereum);
-        chainlinksave.setText(Chainlink);
-        dogesave.setText(Doge);
-        polkadotsave.setText(Polkadot);
-        cardanosave.setText(Cardano);
+        if(ethereumsave!=null || !ethereumsave.equals("")) {
+            ethereumsave.setText(Ethereum);
+        }
+        if(chainlinksave!=null || !chainlinksave.equals("")) {
+            chainlinksave.setText(Chainlink);
+        }
+        if(dogesave!=null || !dogesave.equals("")) {
+            dogesave.setText(Doge);
+        }
+        if(polkadotsave!=null || !polkadotsave.equals("")) {
+            polkadotsave.setText(Polkadot);
+        }
+        if(cardanosave!=null || !cardanosave.equals("")) {
+            cardanosave.setText(Cardano);
+        }
     }
     public void profile_to_home(View view){
         ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
