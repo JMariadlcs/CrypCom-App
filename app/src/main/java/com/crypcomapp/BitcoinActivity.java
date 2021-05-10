@@ -306,6 +306,12 @@ public class BitcoinActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
+    public void bitcoin_to_chart(View view){
+        ImageButton BitcoinChartButton = (ImageButton) findViewById(R.id.BitcoinChartButton);
+
+        Intent intent = new Intent(this, BitcoinChartActivity.class);
+        startActivity(intent);
+    }
 
 
 
