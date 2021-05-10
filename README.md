@@ -1,6 +1,6 @@
 # CRYPCOM APP
 
-![logoappNOFONDO](https://user-images.githubusercontent.com/74883388/117738290-fc231f80-b1fb-11eb-905c-ae8c09554582.png)
+❮img src="images/CrypcomLOGO.png" width="100" ❯
 
 
 This project is a mobile app whose aim is to provide information for cryptocurrency users. The principal functionality of CrypCom is to show the price of the cryptocurrencie you choose in some of the principal exchanges of the 'crypto-space', this is very usefull for people who do 'Cryptocurrency Arbitrage'. 
