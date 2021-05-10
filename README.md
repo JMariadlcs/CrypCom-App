@@ -1,5 +1,8 @@
 # CRYPCOM APP
 
+![logoappNOFONDO](https://user-images.githubusercontent.com/74883388/117738290-fc231f80-b1fb-11eb-905c-ae8c09554582.png)
+
+
 This project is a mobile app whose aim is to provide information for cryptocurrency users. The principal functionality of CrypCom is to show the price of the cryptocurrencie you choose in some of the principal exchanges of the 'crypto-space', this is very usefull for people who do 'Cryptocurrency Arbitrage'. 
 
 Crypcom has other functionalities such us printing charts for price following. It also gives the user the possibility to make your own data wallet, who can save the amount of each cryptocurrency he owns and it also provides a calculator service for your wallet.
