@@ -21,7 +21,5 @@ More details can be found here:
 - Build 
 - Run
 
-# [Course Completion Certificate](https://www.coursera.org/account/accomplishments/certificate/SV9QR6WWN3M3)
-
 # License
 This project is a contribution of Jose María de la Cruz Sánchez, Francisco Atalaya Gómez and Javier Cuenca Gento.
