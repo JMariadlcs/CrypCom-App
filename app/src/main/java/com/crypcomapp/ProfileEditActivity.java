@@ -28,8 +28,6 @@ public class ProfileEditActivity extends AppCompatActivity {
         EditText bitcoinWallet = (EditText) findViewById(R.id.bitcoinWallet);
         EditText ethereumWallet = (EditText) findViewById(R.id.ethereumWallet);
         EditText chainlinkWallet = (EditText) findViewById(R.id.chainlinkWallet);
-        EditText dogeWallet = (EditText) findViewById(R.id.dogeWallet);
-        EditText polkadotWallet = (EditText) findViewById(R.id.polkadotWallet);
         EditText cardanoWallet = (EditText) findViewById(R.id.cardanoWallet);
 
         Button SaveButton = (Button) findViewById(R.id.EditButton);
@@ -51,14 +49,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         if(link.equals("")==false) {
             editor.putString("Chainlink", link);
         }
-        String Doge = dogeWallet.getText().toString();
-        if(Doge.equals("")==false) {
-            editor.putString("Doge", Doge);
-        }
-        String pol = polkadotWallet.getText().toString();
-        if(pol.equals("")==false) {
-            editor.putString("Polkadot", pol);
-        }
+
         String car = cardanoWallet.getText().toString();
         if(car.equals("")==false) {
             editor.putString("Cardano", car);

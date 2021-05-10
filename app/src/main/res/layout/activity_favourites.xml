@@ -32,6 +32,7 @@
                     android:id="@+id/bitcoinimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
+                    android:scaleType="fitStart"
                     app:srcCompat="@drawable/bitcoin" />
 
                 <TextView
@@ -48,6 +49,7 @@
                     android:id="@+id/ethereumimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
+                    android:scaleType="fitStart"
                     app:srcCompat="@drawable/ethereum" />
 
                 <TextView
@@ -63,6 +65,7 @@
                     android:id="@+id/chainlinkimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
+                    android:scaleType="fitStart"
                     app:srcCompat="@drawable/chainlink" />
 
                 <TextView
@@ -78,6 +81,7 @@
                     android:id="@+id/cardanoimage"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
+                    android:scaleType="fitStart"
                     app:srcCompat="@drawable/cardano" />
 
                 <TextView

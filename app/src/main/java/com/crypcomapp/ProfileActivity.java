@@ -28,8 +28,6 @@ public class ProfileActivity extends AppCompatActivity {
         TextView bitcoinsave = (TextView)findViewById(R.id.bitcoinsave);
         TextView ethereumsave = (TextView)findViewById(R.id.ethereumsave);
         TextView chainlinksave = (TextView)findViewById(R.id.chainlinksave);
-        TextView dogesave = (TextView)findViewById(R.id.dogesave);
-        TextView polkadotsave = (TextView)findViewById(R.id.polkadotsave);
         TextView cardanosave = (TextView)findViewById(R.id.cardanosave);
 
         // Recuperamos la informacion salvada en la preferencia
@@ -57,15 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
         if(chainlinksave!=null || !chainlinksave.equals("")) {
             chainlinksave.setText(Chainlink);
         }
-        if(dogesave!=null || !dogesave.equals("")) {
-            dogesave.setText(Doge);
-        }
-        if(polkadotsave!=null || !polkadotsave.equals("")) {
-            polkadotsave.setText(Polkadot);
-        }
-        if(cardanosave!=null || !cardanosave.equals("")) {
-            cardanosave.setText(Cardano);
-        }
+
     }
     public void profile_to_home(View view){
         ImageButton HomeButtonP = (ImageButton) findViewById(R.id.HomeButtonP);
