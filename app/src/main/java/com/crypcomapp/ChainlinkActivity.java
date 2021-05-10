@@ -299,6 +299,13 @@ public class ChainlinkActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void chainlink_to_chart(View view){
+        ImageButton ChainlinkChartButton = (ImageButton) findViewById(R.id.ChainlinkChartButton);
+
+        Intent intent = new Intent(this, ChainlinkChartActivity.class);
+        startActivity(intent);
+    }
+
 
 
     @Override

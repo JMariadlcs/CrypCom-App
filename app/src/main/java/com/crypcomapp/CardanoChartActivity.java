@@ -44,7 +44,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 
 
-public class BitcoinChartActivity extends AppCompatActivity {
+public class CardanoChartActivity extends AppCompatActivity {
 
 
 
@@ -53,23 +53,23 @@ public class BitcoinChartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chart);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        new BitcoinCharts().execute(); //hacemos execute
+        new CardanoCharts().execute(); //hacemos execute
     }
 
 
 
 
-    private class BitcoinCharts extends AsyncTask<View, Void, ArrayList<DataEntry>> {
+    private class CardanoCharts extends AsyncTask<View, Void, ArrayList<DataEntry>> {
 
         @Override
         protected ArrayList<DataEntry> doInBackground(View... urls) {
             ArrayList<DataEntry> temp;
             //print the call in the console
-            System.out.println("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=USD&days=60&interval=daily");
+            System.out.println("https://api.coingecko.com/api/v3/coins/cardano/market_chart?vs_currency=USD&days=60&interval=daily");
 
             // make Call to the url
 
-            temp = makeCall("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=USD&days=60&interval=daily");
+            temp = makeCall("https://api.coingecko.com/api/v3/coins/cardano/market_chart?vs_currency=USD&days=60&interval=daily");
 
 
             return temp;
@@ -99,9 +99,9 @@ public class BitcoinChartActivity extends AppCompatActivity {
 
             cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
 
-            cartesian.title("Value for Bitcoin");
+            cartesian.title("Value for Cardano");
 
-            cartesian.yAxis(0).title("Bitcoin in USD");
+            cartesian.yAxis(0).title("Cardano in USD");
             cartesian.xAxis(0).labels().padding(10d, 10d, 10d, 5d);
 
             List<DataEntry> seriesData = new ArrayList<>();
@@ -117,7 +117,7 @@ public class BitcoinChartActivity extends AppCompatActivity {
 
 
             Line series1 = cartesian.line(series1Mapping);
-            series1.name("Bitcoin");
+            series1.name("Cardano");
             series1.hovered().markers().enabled(true);
             series1.hovered().markers()
                     .type(MarkerType.CIRCLE)
@@ -197,7 +197,7 @@ public class BitcoinChartActivity extends AppCompatActivity {
 
 
                     prices.add(new ValueDataEntry((61-contador)+"d",
-                                (double)Math.round(reader.nextDouble() * 1000d) / 1000d));
+                            (double)Math.round(reader.nextDouble() * 1000d) / 1000d));
                     System.out.println("añadimos");
 
 

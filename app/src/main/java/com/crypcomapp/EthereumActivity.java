@@ -298,6 +298,13 @@ public class EthereumActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void ethereum_to_chart(View view){
+        ImageButton EthereumChartButton = (ImageButton) findViewById(R.id.EthereumChartButton);
+
+        Intent intent = new Intent(this, EthereumChartActivity.class);
+        startActivity(intent);
+    }
+
 
 
     @Override

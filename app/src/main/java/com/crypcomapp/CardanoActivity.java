@@ -300,7 +300,12 @@ public class CardanoActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
+    public void cardano_to_chart(View view){
+        ImageButton CardanoChartButton = (ImageButton) findViewById(R.id.CardanoChartButton);
 
+        Intent intent = new Intent(this, CardanoChartActivity.class);
+        startActivity(intent);
+    }
 
 
     @Override

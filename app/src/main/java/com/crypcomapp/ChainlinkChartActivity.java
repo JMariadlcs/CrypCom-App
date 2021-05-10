@@ -1,13 +1,10 @@
 package com.crypcomapp;
 
 
-
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.View;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,19 +13,6 @@ import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
-
-
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-
-
-
-
 import com.anychart.charts.Cartesian;
 import com.anychart.core.cartesian.series.Line;
 import com.anychart.data.Mapping;
@@ -38,13 +22,17 @@ import com.anychart.enums.MarkerType;
 import com.anychart.enums.TooltipPositionMode;
 import com.anychart.graphics.vector.Stroke;
 
-
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
 
-
-public class BitcoinChartActivity extends AppCompatActivity {
+public class ChainlinkChartActivity extends AppCompatActivity {
 
 
 
@@ -53,23 +41,23 @@ public class BitcoinChartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chart);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        new BitcoinCharts().execute(); //hacemos execute
+        new ChainlinkCharts().execute(); //hacemos execute
     }
 
 
 
 
-    private class BitcoinCharts extends AsyncTask<View, Void, ArrayList<DataEntry>> {
+    private class ChainlinkCharts extends AsyncTask<View, Void, ArrayList<DataEntry>> {
 
         @Override
         protected ArrayList<DataEntry> doInBackground(View... urls) {
             ArrayList<DataEntry> temp;
             //print the call in the console
-            System.out.println("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=USD&days=60&interval=daily");
+            System.out.println("https://api.coingecko.com/api/v3/coins/chainlink/market_chart?vs_currency=USD&days=60&interval=daily");
 
             // make Call to the url
 
-            temp = makeCall("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=USD&days=60&interval=daily");
+            temp = makeCall("https://api.coingecko.com/api/v3/coins/chainlink/market_chart?vs_currency=USD&days=60&interval=daily");
 
 
             return temp;
@@ -99,9 +87,9 @@ public class BitcoinChartActivity extends AppCompatActivity {
 
             cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
 
-            cartesian.title("Value for Bitcoin");
+            cartesian.title("Value for Chainlink");
 
-            cartesian.yAxis(0).title("Bitcoin in USD");
+            cartesian.yAxis(0).title("Chainlink in USD");
             cartesian.xAxis(0).labels().padding(10d, 10d, 10d, 5d);
 
             List<DataEntry> seriesData = new ArrayList<>();
@@ -117,7 +105,7 @@ public class BitcoinChartActivity extends AppCompatActivity {
 
 
             Line series1 = cartesian.line(series1Mapping);
-            series1.name("Bitcoin");
+            series1.name("Chainlink");
             series1.hovered().markers().enabled(true);
             series1.hovered().markers()
                     .type(MarkerType.CIRCLE)
@@ -197,7 +185,7 @@ public class BitcoinChartActivity extends AppCompatActivity {
 
 
                     prices.add(new ValueDataEntry((61-contador)+"d",
-                                (double)Math.round(reader.nextDouble() * 1000d) / 1000d));
+                            (double)Math.round(reader.nextDouble() * 1000d) / 1000d));
                     System.out.println("añadimos");
 
 
