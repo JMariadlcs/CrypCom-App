@@ -21,7 +21,7 @@ More details can be found here:
 - Build 
 - Run
 
-#LINKS
+# LINKS
 * [Crypcom Functionality Video](https://www.youtube.com/watch?v=bXnqPsOzCv0) 
 
 # License
