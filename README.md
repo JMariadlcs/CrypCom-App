@@ -25,4 +25,4 @@ More details can be found here:
 * [Crypcom Functionality Video](https://www.youtube.com/watch?v=bXnqPsOzCv0) 
 
 # License
-This project is a contribution of Jose María de la Cruz Sánchez, Francisco Atalaya Gómez and Javier Cuenca Gento.
+This project is a contribution of Jose María de la Cruz Sánchez, @Francisco Atalaya Gómez and Javier Cuenca Gento. @FcoAtalaya
