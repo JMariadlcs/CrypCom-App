@@ -1,6 +1,6 @@
 # <img src="CrypcomLOGO.png" width="100" height="90"> CRYPCOM APP
 
-This project is a mobile app whose aim is to provide information for cryptocurrency users. The principal functionality of CrypCom is showing the price of the cryptocurrencie you choose in some of the principal exchanges of the 'crypto-space', this is very usefull for people who profit from 'Cryptocurrency Arbitrage'. 
+CrypComApp is a mobile app whose aim is to provide information for cryptocurrency users. The principal functionality of CrypCom is showing the price of the cryptocurrencie you choose in some of the principal exchanges of the 'crypto-space', this is very usefull for people who profit from 'Cryptocurrency Arbitrage'. 
 
 Crypcom has other functionalities such us printing charts for price tracking. It also gives the user the possibility to make its own data wallet, who can save the amount of each cryptocurrency he owns and it also provides a calculator service for your wallet.
 
